@@ -1,5 +1,7 @@
 import './Sidebar.css'
-import AppStoreBadges from '../../assets/app-store-badges.png'
+// import AppStoreBadges from '../../assets/app-store-badges.png'
+import AppleStore from '../../assets/apple-store.png'
+import AndroidStore from '../../assets/android-store.png'
 import MailAd from '../../assets/mail-ad.png'
 const otherWords = [
   'Welcoming',
@@ -20,10 +22,16 @@ export const Sidebar = () => {
     <aside className="sidebar" aria-label="Related content">
       <section className="download-card">
         <h2>Download Our Mobile App!</h2>
-        <img
-          src={AppStoreBadges}
+        <div className='AppStoreBadges'>
+          <img
+          src={AndroidStore}
           alt="Get it on Google Play and download on the App Store"
         />
+        <img
+          src={AppleStore}
+          alt="Get it on Google Play and download on the App Store"
+        />
+        </div>
       </section>
 
       <section className="email-ad">
