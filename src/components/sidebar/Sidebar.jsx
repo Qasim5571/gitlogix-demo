@@ -1,5 +1,6 @@
 import './Sidebar.css'
-
+import AppStoreBadges from '../../assets/app-store-badges.png'
+import MailAd from '../../assets/mail-ad.png'
 const otherWords = [
   'Welcoming',
   'Well',
@@ -20,13 +21,13 @@ export const Sidebar = () => {
       <section className="download-card">
         <h2>Download Our Mobile App!</h2>
         <img
-          src="src/assets/app-store-badges.png"
+          src={AppStoreBadges}
           alt="Get it on Google Play and download on the App Store"
         />
       </section>
 
       <section className="email-ad">
-        <img src="src/assets/mail-ad.png" alt="Mail app notification" />
+        <img src={MailAd} alt="Mail app notification" />
         <p>Want to automate your emails?</p>
         <button type="button">TRY IT FOR FREE</button>
       </section>

@@ -1,4 +1,5 @@
 import './Header.css';
+import BannerAd from '../../assets/banner-ad.png'
 export const Header = () => {
   return (
     <section className="hero-section" aria-label="Dictionary search">
@@ -22,7 +23,7 @@ export const Header = () => {
 
         <img
           className="banner-ad"
-          src="src/assets/banner-ad.png"
+          src={BannerAd}
           alt="Advertisement: zaroorat e rishta in Pakistan"
         />
       </div>

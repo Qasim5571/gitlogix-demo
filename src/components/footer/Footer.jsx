@@ -1,5 +1,6 @@
 import './Footer.css';
-
+import Android from '../../assets/andriod.png'
+import Apple from '../../assets/apple.png'
 import { Logo } from "../../assets/Logo"
 
 export const Footer = () => {
@@ -34,8 +35,8 @@ export const Footer = () => {
           <a href="#contact-us">Contact us</a>
           <p>Download Our Mobile App:</p>
           <div className="platform-icons" aria-label="Android and Apple apps">
-            <img className='android' src="src/assets/andriod.png" alt="Andriod" />
-            <img className='apple' src="src/assets/apple.png" alt="Andriod" />
+            <img className='android' src={Android} alt="Andriod" />
+            <img className='apple' src={Apple} alt="Andriod" />
 
           </div>
         </section>
