@@ -1,0 +1,293 @@
+:root {
+  --primary: #2269e1;
+  --primary-dark: #1c56b9;
+  --button-yellow: #f8b318;
+  --card-shadow: 0 4px 15px rgb(0 0 0 / 25%);
+  --page-gutter: clamp(32px, 7.3vw, 140px);
+}
+
+.app-shell {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #fff;
+}
+
+.body-zone {
+  min-height: clamp(1040px, 86vw, 1648px);
+  padding-top: 52px;
+}
+
+.content-layout {
+  display: grid;
+  width: min(1740px, calc(100% - var(--page-gutter) - 40px));
+  margin-right: auto;
+  margin-left: max(20px, calc((100% - 1640px) / 2));
+  grid-template-columns: minmax(0, 1fr) 454px;
+  gap: clamp(34px, 3.2vw, 61px);
+}
+
+.definitions {
+  min-width: 0;
+}
+
+.definition {
+  min-height: 304px;
+}
+
+.definition:nth-child(2) {
+  min-height: 290px;
+}
+
+.definition h2 {
+  margin: 0;
+  color: var(--primary);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+.definition-pair {
+  display: grid;
+  margin-top: 40px;
+  grid-template-columns: minmax(280px, 422px) minmax(280px, 422px);
+  justify-content: space-between;
+  gap: 38px;
+}
+
+.definition-pair p {
+  max-width: 422px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.38;
+}
+
+.definition-pair .urdu-copy {
+  margin-top: 100px;
+  justify-self: end;
+  text-align: right;
+  line-height: 22px;
+  font-family: "Noto Nastaliq Urdu", Inter, "Noto Sans Arabic", Arial, sans-serif;
+}
+
+.definition:first-child .urdu-copy {
+  margin-top: 113px;
+}
+
+.common-words {
+  width: min(1596px, calc(100% - (2 * clamp(32px, 8.4vw, 162px))));
+  margin: 0 auto 75px;
+}
+
+.common-heading {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.common-heading h2 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+.carousel-arrows {
+  display: flex;
+  gap: 23px;
+  align-items: center;
+  font-size: 17px;
+}
+
+.word-cards {
+  display: grid;
+  margin-top: 52px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 48px;
+}
+
+.word-card {
+  position: relative;
+  height: 194px;
+  padding: 42px 32px 28px;
+  border-bottom: 4px solid var(--primary);
+  background: #fff;
+  box-shadow: var(--card-shadow);
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.word-card > button {
+  position: absolute;
+  top: 14px;
+  right: 15px;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  font-size: 22px;
+}
+
+.word-card p {
+  margin: 0;
+}
+
+.word-card-urdu {
+  position: absolute;
+  right: 32px;
+  bottom: 38px;
+  text-align: right;
+  font-family: "Noto Nastaliq Urdu", Inter, "Noto Sans Arabic", Arial, sans-serif;
+}
+@media (max-width: 1500px) {
+  :root {
+    --page-gutter: clamp(72px, 7.5vw, 112px);
+  }
+
+  .content-layout {
+    width: min(1740px, calc(100% - (2 * var(--page-gutter))));
+    margin-right: auto;
+    margin-left: auto;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 29%);
+    gap: 38px;
+  }
+}
+
+@media (max-width: 1120px) {
+  :root {
+    --page-gutter: 48px;
+  }
+
+  .definition h2,
+  .common-heading h2 {
+    font-size: 34px;
+    line-height: 42px;
+  }
+
+  .definition-pair {
+    grid-template-columns: minmax(210px, 1fr) minmax(210px, 1fr);
+    gap: 30px;
+  }
+
+  .word-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --page-gutter: 32px;
+  }
+
+  .site-header {
+    height: 70px;
+  }
+
+  .search-bar {
+    margin-top: 34px;
+  }
+
+  .body-zone {
+    min-height: 0;
+    padding: 54px 0 80px;
+  }
+
+  .content-layout {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .definition {
+    min-height: 0;
+    margin-bottom: 70px;
+  }
+
+  .definition:last-child {
+    margin-bottom: 0;
+  }
+
+  .definition-pair .urdu-copy {
+    margin-top: 50px;
+  }
+
+  .definition:first-child .urdu-copy {
+    margin-top: 50px;
+  }
+
+  .common-words {
+    margin-bottom: 70px;
+  }
+}
+
+@media (max-width: 620px) {
+  :root {
+    --page-gutter: 20px;
+  }
+
+  .site-header {
+    height: 64px;
+  }
+  .language-selector .fa-chevron-down {
+    font-size: 11px;
+  }
+
+  .language-arrow {
+    font-size: 18px;
+  } */
+
+  .content-layout {
+    width: calc(100% - 40px);
+  }
+
+  .definition {
+    margin-bottom: 56px;
+  }
+
+  .definition h2,
+  .common-heading h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .definition-pair {
+    display: block;
+    margin-top: 25px;
+  }
+
+  .definition-pair p {
+    max-width: none;
+    font-size: 16px;
+  }
+
+  .definition-pair .urdu-copy {
+    margin-top: 28px;
+  }
+
+  .definition:first-child .urdu-copy {
+    margin-top: 28px;
+  }
+
+  .common-words {
+    width: calc(100% - 40px);
+    margin-bottom: 56px;
+  }
+
+  .common-heading {
+    align-items: flex-end;
+  }
+
+  .carousel-arrows {
+    gap: 16px;
+  }
+
+  .word-cards {
+    margin-top: 34px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .word-card {
+    height: 166px;
+  }
+}

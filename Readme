@@ -1,0 +1,9 @@
+Run 'npm install' to install the packages
+run 'npm run dev' to run the app
+
+The application is responsive for the Mobile, Tablet and Desktop
+
+Functionalities are not working as the main focus was to make the website dynamic
+
+only Vanilla CSS is used for styling
+ social icons are fetched from Fontawsome library

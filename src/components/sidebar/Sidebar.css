@@ -1,0 +1,158 @@
+.sidebar {
+  width: 454px;
+}
+.download-card,
+.other-words {
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--card-shadow);
+}
+
+.download-card {
+  height: 183px;
+}
+
+.download-card h2 {
+  display: grid;
+  height: 50px;
+  margin: 0;
+  place-items: center;
+  color: #fff;
+  background: var(--primary);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.download-card img {
+  width: 414px;
+  height: auto;
+  margin: 41px auto 0;
+}
+
+.email-ad {
+  margin-top: 26px;
+  text-align: center;
+}
+
+.email-ad > img {
+  width: 454px;
+  aspect-ratio: 454 / 569;
+  object-fit: cover;
+}
+
+.email-ad p {
+  display: grid;
+  min-height: 94px;
+  padding: 12px 32px;
+  margin: 0;
+  place-items: center;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 27px;
+}
+
+.email-ad button {
+  width: 100%;
+  height: 86px;
+  cursor: pointer;
+  color: #000;
+  background: var(--button-yellow);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+}
+
+.other-words {
+  min-height: 491px;
+  padding: 21px 40px 26px;
+  margin-top: 68px;
+}
+
+.other-words h2 {
+  margin: 0 0 15px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 31px;
+}
+
+.other-words li {
+  font-size: 24px;
+  line-height: 29px;
+}
+@media (max-width: 1500px){
+    .sidebar {
+    width: 100%;
+  }
+   .download-card img {
+    width: calc(100% - 40px);
+  }
+
+  .email-ad > img {
+    width: 100%;
+  }
+}
+@media (max-width: 1120px){
+ .other-words {
+    padding-inline: 30px;
+  }
+
+  .other-words li {
+    font-size: 21px;
+  }
+}
+@media (max-width: 900px){
+     .sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 32px;
+  }
+  .download-card {
+    grid-column: 1 / -1;
+  }
+  .email-ad,
+  .other-words {
+    margin-top: 0;
+  }
+
+  .other-words {
+    min-height: auto;
+  }
+
+}
+@media (max-width: 620px){
+    .sidebar {
+    display: block;
+  }
+   .email-ad p {
+    min-height: 74px;
+    font-size: 19px;
+  }
+
+  .email-ad button {
+    height: 68px;
+    font-size: 20px;
+  }
+   .download-card,
+  .email-ad,
+  .other-words {
+    width: 100%;
+    max-width: 454px;
+    margin-inline: auto;
+  }
+
+  .email-ad,
+  .other-words {
+    margin-top: 32px;
+  }
+   .other-words {
+    padding-inline: 32px;
+  }
+
+  .other-words li {
+    font-size: 20px;
+    line-height: 27px;
+  }
+}
