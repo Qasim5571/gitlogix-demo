@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './Navbar.css'
 
 import { Logo } from "../../assets/Logo"
@@ -12,6 +13,7 @@ const navigation = [
 ]
 
 export const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   return (
     <header className="site-header">
       <div className="header-inner">
@@ -27,10 +29,35 @@ export const Navbar = () => {
           ))}
         </nav>
 
-        <button className="mobile-menu" type="button" aria-label="Open navigation">
-          <i className="fa-solid fa-bars" aria-hidden="true" />
+        <button
+          className="mobile-menu"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
+          onClick={() => setIsMenuOpen((open) => !open)}
+        >
+          <i
+            className={`fa-solid ${isMenuOpen ? 'fa-xmark' : 'fa-bars'}`}
+            aria-hidden="true"
+          />
         </button>
       </div>
+      <nav
+        id="mobile-navigation"
+        className={`mobile-nav ${isMenuOpen ? 'is-open' : ''}`}
+        aria-hidden={!isMenuOpen}
+      >
+        {navigation.map((item) => (
+          <a
+            href={`#${item.toLowerCase().replaceAll(' ', '-')}`}
+            key={item}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {item}
+          </a>
+        ))}
+      </nav>
     </header>
   )
 }
