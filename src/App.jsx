@@ -245,10 +245,8 @@ const Definitions = ({
   )
 }
 
-const CommonWords = ({
-  words,
-  onRemoveWord,
-}) => {
+const CommonWords = ({ words, onRemoveWord }) => {
+  console.log(words)
   return (
     <section
       className="common-words"
@@ -259,44 +257,50 @@ const CommonWords = ({
           Most Common Words:
         </h2>
 
-        <div
+        {/* <div
           className="carousel-arrows"
           aria-hidden="true"
         >
           <i className="fa-solid fa-chevron-left" />
           <i className="fa-solid fa-chevron-right" />
+        </div> */}
+      </div>
+      {words.length > 0 ?
+        <div className="word-cards">
+          {words.map((word) => (
+            <article
+              className="word-card"
+              key={word.id}
+            >
+              <button
+                type="button"
+                aria-label="Remove word card"
+                onClick={() => onRemoveWord(word.id)}
+              >
+                <i
+                  className="fa-solid fa-xmark"
+                  aria-hidden="true"
+                />
+              </button>
+
+              <p>{word.english}</p>
+
+              <p
+                className="word-card-urdu"
+                dir="rtl"
+                lang="ur"
+              >
+                {word.urdu}
+              </p>
+            </article>
+          ))}
         </div>
-      </div>
+        :
+        <div style={{"marginTop": "20px"}}>
+          Reload to see common words again
+        </div>
+      }
 
-      <div className="word-cards">
-        {words.map((word) => (
-          <article
-            className="word-card"
-            key={word.id}
-          >
-            <button
-              type="button"
-              aria-label="Remove word card"
-              onClick={() => onRemoveWord(word.id)}
-            >
-              <i
-                className="fa-solid fa-xmark"
-                aria-hidden="true"
-              />
-            </button>
-
-            <p>{word.english}</p>
-
-            <p
-              className="word-card-urdu"
-              dir="rtl"
-              lang="ur"
-            >
-              {word.urdu}
-            </p>
-          </article>
-        ))}
-      </div>
     </section>
   )
 }
@@ -335,12 +339,6 @@ const App = () => {
     }
 
     updateSelectedLanguages()
-
-    /*
-      The storage event does not run in the same browser tab
-      that changed localStorage, so the interval keeps this
-      component synchronized with the Header selections.
-    */
     const intervalId = window.setInterval(
       updateSelectedLanguages,
       200,

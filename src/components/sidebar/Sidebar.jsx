@@ -40,10 +40,12 @@ export const Sidebar = () => {
           <img
             src={AndroidStore}
             alt="Get it on Google Play and download on the App Store"
+            onClick={() => window.open('https://www.google.com/', '_blank', 'noopener,noreferrer')}
           />
           <img
             src={AppleStore}
             alt="Get it on Google Play and download on the App Store"
+            onClick={() => window.open('https://www.google.com/', '_blank', 'noopener,noreferrer')}
           />
         </div>
       </section>
@@ -51,7 +53,7 @@ export const Sidebar = () => {
       <section className="email-ad">
         <img src={MailAd} alt="Mail app notification" />
         <p>Want to automate your emails?</p>
-        <button type="button">TRY IT FOR FREE</button>
+        <button type="button" onClick={() => window.open('https://www.gmail.com/', '_blank', 'noopener,noreferrer')}>TRY IT FOR FREE</button>
       </section>
 
       <section className="other-words">

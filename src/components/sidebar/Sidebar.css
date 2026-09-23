@@ -87,6 +87,9 @@
     margin: 41px auto 0;
     height: auto;
 }
+.AppStoreBadges img:hover{
+  cursor: pointer;
+}
 @media (max-width: 1500px){
     .sidebar {
     width: 100%;
