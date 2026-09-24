@@ -133,6 +133,21 @@
 .search-copy::-webkit-search-cancel-button {
   cursor: pointer;
 }
+.banner-ad {
+    animation: imageFadeIn 0.5s ease 0.5s both;
+}
+
+@keyframes imageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 @media (max-width: 900px){
 
